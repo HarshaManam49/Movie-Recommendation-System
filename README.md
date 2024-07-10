@@ -1,18 +1,20 @@
-# SMS-Spam-Predictor
+# Movie Recommendation System
 
 ### Description   
->Ml classification model to predict message is spam or not  
+> A machine learning model to recommend movies based on a user's preferences by analyzing movie metadata. 
 
 ### Workflow
->1)Preprocessed data using nltk library  
->2)Used bag-of-words model TFidf to represent text in numerical values  
->3) The model is selected on the basis of high-precision metric to reduce the number of Type 1 errors
+>1) Data Loading and Preprocessing: Merged movie and credits datasets, handled missing values, and extracted relevant columns. 
+>2)Feature Extraction: Converted genres, keywords, cast, and crew into a list format using ast.literal_eval. Kept only the top 3 actors and directors.  
+>3) Text Processing: Combined the overview, genres, keywords, cast, and crew into a single 'tags' column for each movie. Removed spaces within tags to ensure consistency.
+>4) Vectorization: Applied CountVectorizer to convert text data into numerical vectors, considering up to 5000 features and removing English stop words.
+>5) Similarity Calculation: Used cosine similarity to measure the similarity between movie vectors.
+>6) Recommendation Function: Implemented a function to recommend movies based on the cosine similarity scores.  
 
 ### Libraries used
 >Nltk  
 >TfidfVectorizer  
 >Sklearn  
->Matplotlib  
 >Numpy  
 >Pandas  
 >Streamlit  
